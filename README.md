@@ -1,2 +1,2 @@
-# LeafOS
-An app list for updating LeafOS
+# NatureOS
+An app list for updating NatureOS. Powered by LeafOS and Bash.
