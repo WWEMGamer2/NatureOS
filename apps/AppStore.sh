@@ -22,21 +22,27 @@ echo "NatureOS App Store"
 while true
 do
   tput setaf 214
-  read -p "read, write, or exit: " rw
+  read -p "create, find, or exit: " rw
 
-  if [ "$rw" == "write" ];
+  if [ "$rw" == "create" ];
   then
     tput setaf 207
 
-    read -p "Date of event: " date
-    read -p "Contents of event: " contents
+    read -p "App Name:" query
+    read -p "Category: " category
 
-    echo "$date $contents" >> data/calendar.txt
-    sort -V data/calendar.txt
+    echo "$query $category" >> data/appsToBeMade.txt
+    sort -V data/appsToBeMade.txt
 
-  elif [ "$rw" == "read" ];
+  elif [ "$rw" == "find" ];
   then
-    sort -V data/calendar.txt
+    read -p "App:" query
+    read -p "Category:" category
+    if [ "$query" in ./apps ];
+    then
+      echo "Found app."
+    else
+      echo "Found nothing."
   else
     break
   fi
