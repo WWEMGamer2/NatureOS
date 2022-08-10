@@ -38,11 +38,6 @@ do
   then
     read -p "App:" query
     read -p "Category:" category
-    if [ "$query" in ./apps ];
-    then
-      echo "Found app."
-    else
-      echo "Found nothing."
   else
     break
   fi
